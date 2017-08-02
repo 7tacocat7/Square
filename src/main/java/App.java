@@ -1,25 +1,23 @@
-//import java.io.BufferedReader;
-//import java.io.IOException;
-//import java.io.InputStreamReader;
-//
-///**
-// * Created by Guest on 8/2/17.
-// */
-//public class App {
-//    public static void main(String[] args) {
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//
-//        boolean programRunning = true;
-//
-////        while (programRunning) {
-////
-////            try {
-////
-////            }
-////            catch (IOException e)
-////            {
-////                e.printStackTrace();
-////            }
-////        }
-//    }
-//}
+import models.Rectangle;
+
+import java.io.BufferedReader;
+import java.io.Console;
+import java.io.InputStreamReader;
+
+public class App {
+    public static void main(String[] args) {
+        Console myConsole = System.console();
+        System.out.println( "Enter the length of your rectangle:");
+        int length = Integer.parseInt(myConsole.readLine());
+
+        System.out.println("Enter the width of your rectangle");
+        int width = Integer.parseInt(myConsole.readLine());
+
+        Rectangle rectangle = new Rectangle(length, width);
+
+        boolean squareResult = rectangle.isSquare();
+        System.out.println(rectangle.toString() );
+
+        System.out.printf("Is your rectangle a square, too? %b! Your length was %d and your width was %s.", squareResult, length, width);
+    }
+}
